@@ -56,6 +56,10 @@ const menuList = [
     ]
   },
   {
+    title:"副文本",
+    key:"/admin/text"
+  },
+  {
     title:"表格",
     key:"/admin/table"
   }
