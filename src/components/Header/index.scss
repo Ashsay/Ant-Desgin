@@ -1,4 +1,5 @@
 .header{
+  background:#fff;
   &-top{
     height:60px;
     line-height: 60px;
@@ -14,6 +15,16 @@
     line-height: 40px;
     &-title{
       text-align: center;
+      font-size:16px;
+      &::after{
+        position: absolute;
+        content: "";
+        left:45%;
+        top:99%;
+        border-top:9px solid #fff;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+      }
     }
     .weather{
       text-align: right;

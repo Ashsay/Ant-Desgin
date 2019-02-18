@@ -1,3 +1,7 @@
+.header {
+  background: #fff;
+}
+
 .header-top {
   height: 60px;
   line-height: 60px;
@@ -17,6 +21,17 @@
 
 .header .breadcrumb-title {
   text-align: center;
+  font-size: 16px;
+}
+
+.header .breadcrumb-title::after {
+  position: absolute;
+  content: "";
+  left: 45%;
+  top: 99%;
+  border-top: 9px solid #fff;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
 }
 
 .header .breadcrumb .weather {
