@@ -6,7 +6,7 @@ import { Row, Col } from 'antd';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NavLeft from './components/NavLeft'
-import Home from './pages/home';
+import Routes from './pages/routes/routes';
 
 class Admin extends Component {
   render() {
@@ -18,7 +18,7 @@ class Admin extends Component {
         <Col span={21} className="main">
           <Header />
           <Row className="content">
-            <Home />
+            <Routes />
           </Row>
           <Footer />
         </Col>
