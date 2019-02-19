@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import {Row, Col} from "antd";
 import PropTypes from 'prop-types';
 
 class Demo extends Component {

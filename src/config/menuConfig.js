@@ -47,11 +47,11 @@ const menuList = [
     children:[
       {
         title:"登录",
-        key:"/admin/from/login"
+        key:"/login"
       },
       {
         title:"注册",
-        key:"/admin/form/reg"
+        key:"/reg"
       }
     ]
   },
@@ -62,6 +62,10 @@ const menuList = [
   {
     title:"表格",
     key:"/admin/table"
+  },
+  {
+    title:"demo",
+    key:"/admin/demo"
   }
 ]
 
