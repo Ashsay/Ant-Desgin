@@ -8,21 +8,27 @@ import Admin from './admin';
 import Login from './pages/login';
 import ButtonPages from './pages/ui/button';
 import NoMatch from './pages/nomatch';
+import Message from './pages/ui/message';
+import Tab from './pages/ui/tab';
 
 class Routes extends Component {
   render() {
     return (
       <HashRouter>
         <App>
-          <Route path="/login" component={Login} />
-          <Route path="/admin" render={()=>(
-            <Admin>
-              <Route path="/admin/demo" component={Demo} />
-              <Route path="/admin/ui/buttons" component={ButtonPages} />
-              <Route component={NoMatch} />
-            </Admin>
-          )} />
-        <Route component={NoMatch} />
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/admin" render={()=>(
+              <Admin>
+                <Route path="/admin/demo" component={Demo} />
+                <Route path="/admin/ui/buttons" component={ButtonPages} />
+                <Route path="/admin/ui/message" component={Message} />
+                <Route path="/admin/ui/tabs" component={Tab} />
+                {/* <Route component={NoMatch} /> */}
+              </Admin>
+            )} />
+            <Route component={NoMatch} />
+          </Switch>
         </App>
       </HashRouter>
     );

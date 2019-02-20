@@ -29,7 +29,7 @@ const menuList = [
       },
       {
         title:"Tab标签",
-        key:"/admin/ui/label"
+        key:"/admin/ui/tabs"
       },
       {
         title:"图片画廊",
