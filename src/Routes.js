@@ -10,6 +10,7 @@ import ButtonPages from './pages/ui/button';
 import NoMatch from './pages/nomatch';
 import Message from './pages/ui/message';
 import Tab from './pages/ui/tab';
+import Modals from './pages/ui/modals';
 
 class Routes extends Component {
   render() {
@@ -24,6 +25,7 @@ class Routes extends Component {
                 <Route path="/admin/ui/buttons" component={ButtonPages} />
                 <Route path="/admin/ui/message" component={Message} />
                 <Route path="/admin/ui/tabs" component={Tab} />
+                <Route path="/admin/ui/modals" component={Modals} />
                 {/* <Route component={NoMatch} /> */}
               </Admin>
             )} />
