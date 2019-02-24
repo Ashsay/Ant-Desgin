@@ -11,6 +11,8 @@ import NoMatch from './pages/nomatch';
 import Message from './pages/ui/message';
 import Tab from './pages/ui/tab';
 import Modals from './pages/ui/modals';
+import Loading from './pages/ui/loading';
+import Notify from './pages/ui/notify';
 
 class Routes extends Component {
   render() {
@@ -26,6 +28,8 @@ class Routes extends Component {
                 <Route path="/admin/ui/message" component={Message} />
                 <Route path="/admin/ui/tabs" component={Tab} />
                 <Route path="/admin/ui/modals" component={Modals} />
+                <Route path="/admin/ui/loading" component={Loading} />
+                <Route path="/admin/ui/notify" component={Notify} />
                 {/* <Route component={NoMatch} /> */}
               </Admin>
             )} />
