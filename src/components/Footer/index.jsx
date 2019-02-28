@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.css';
-import PropTypes from 'prop-types';
 
 class Footer extends Component {
   render() {
@@ -11,9 +10,5 @@ class Footer extends Component {
     );
   }
 }
-
-Footer.propTypes = {
-
-};
 
 export default Footer;

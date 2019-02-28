@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import Util from './../../utils/utils';
 import axios from './../../axios';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -66,8 +66,8 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
+// Header.propTypes = {
 
-};
+// };
 
 export default Header;

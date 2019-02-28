@@ -5,7 +5,6 @@ import { HashRouter , Route , Switch } from 'react-router-dom';
 import Demo from './pages/demo';
 import Admin from './admin';
 // import Home from './pages/home';
-import Login from './pages/login';
 import ButtonPages from './pages/ui/button';
 import NoMatch from './pages/nomatch';
 import Message from './pages/ui/message';
@@ -13,6 +12,8 @@ import Tab from './pages/ui/tab';
 import Modals from './pages/ui/modals';
 import Loading from './pages/ui/loading';
 import Notify from './pages/ui/notify';
+import Swiper from './pages/ui/swiper';
+import Login from './pages/from/login';
 
 class Routes extends Component {
   render() {
@@ -20,7 +21,6 @@ class Routes extends Component {
       <HashRouter>
         <App>
           <Switch>
-            <Route path="/login" component={Login} />
             <Route path="/admin" render={()=>(
               <Admin>
                 <Route path="/admin/demo" component={Demo} />
@@ -30,6 +30,8 @@ class Routes extends Component {
                 <Route path="/admin/ui/modals" component={Modals} />
                 <Route path="/admin/ui/loading" component={Loading} />
                 <Route path="/admin/ui/notify" component={Notify} />
+                <Route path="/admin/ui/swiper" component={Swiper} />
+                <Route path="/admin/form/login" component={Login} />
                 {/* <Route component={NoMatch} /> */}
               </Admin>
             )} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./index.css";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class Home extends Component {
   render() {
@@ -12,8 +12,8 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+// Home.propTypes = {
 
-};
+// };
 
 export default Home;

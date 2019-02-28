@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class NoMatch extends Component {
   render() {
@@ -11,8 +11,8 @@ class NoMatch extends Component {
   }
 }
 
-NoMatch.propTypes = {
+// NoMatch.propTypes = {
 
-};
+// };
 
 export default NoMatch;

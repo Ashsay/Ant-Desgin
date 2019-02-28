@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './style/common.css';
 
 import { Row, Col } from 'antd';
@@ -25,9 +24,5 @@ class Admin extends Component {
     );
   }
 }
-
-Admin.propTypes = {
-
-};
 
 export default Admin;
