@@ -13,7 +13,7 @@ import Modals from './pages/ui/modals';
 import Loading from './pages/ui/loading';
 import Notify from './pages/ui/notify';
 import Swiper from './pages/ui/swiper';
-import Login from './pages/from/login';
+import Login from './pages/form/login';
 
 class Routes extends Component {
   render() {
