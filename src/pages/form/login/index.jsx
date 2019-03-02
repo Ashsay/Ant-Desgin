@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Card, Form, Input, Button, message } from 'antd';
+import { Card, Form, Input, Button, message, Icon, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
 class Login extends Component {
   
   handleSubmit = () => {
     this.props.form.validateFields((err,values)=>{
+      console.log(values);
       if(!err){
         message.success(`${values.username} Success`)
       }
@@ -37,13 +38,19 @@ class Login extends Component {
             <FormItem>
               {
                 getFieldDecorator('username',{
-                  initialValue:'',
+                  initialValue:'123',
                   rules:[{
                     required:true,
                     message:"用户名不能为空"
+                  },{
+                    min:5,max:10,
+                    message:'长度不在范围内'
+                  },{
+                    pattern:new RegExp('^\\w+$','g'),
+                    message:'必须为英文或数字'
                   }]
                 })(
-                  <Input placeholder="username" />
+                  <Input prefix={<Icon type='user' />} placeholder="username" />
                 )
               }
             </FormItem>
@@ -53,9 +60,20 @@ class Login extends Component {
                   initialValue:'',
                   rules:[]
                 })(
-                  <Input type="password" placeholder="password" />
+                  <Input prefix={<Icon type="lock" />} type="password" placeholder="password" />
                 )
               }
+            </FormItem>
+            <FormItem>
+              {
+                getFieldDecorator('checkbox',{
+                  valuePropName:'checked',
+                  initialValue:true
+                })(
+                  <Checkbox>记住密码</Checkbox>
+                )
+              }
+              <a href="##" style={{float:"right"}}>忘记密码</a>
             </FormItem>
             <FormItem>
               <Button type="primary" onClick={this.handleSubmit}>登入</Button>

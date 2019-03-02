@@ -14,6 +14,7 @@ import Loading from './pages/ui/loading';
 import Notify from './pages/ui/notify';
 import Swiper from './pages/ui/swiper';
 import Login from './pages/form/login';
+import Register from './pages/form/register';
 
 class Routes extends Component {
   render() {
@@ -32,6 +33,7 @@ class Routes extends Component {
                 <Route path="/admin/ui/notify" component={Notify} />
                 <Route path="/admin/ui/swiper" component={Swiper} />
                 <Route path="/admin/form/login" component={Login} />
+                <Route path="/admin/form/reg" component={Register} />
                 {/* <Route component={NoMatch} /> */}
               </Admin>
             )} />

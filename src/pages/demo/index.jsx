@@ -28,7 +28,7 @@ class Demo extends Component {
             <Alert message="Ant Desgin" description="This is a Alert components" />
           </Spin>
         </Card>
-        <Card>
+        <Card title="ChangePages">
           
         </Card>
       </div>
