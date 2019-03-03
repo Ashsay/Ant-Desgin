@@ -1,0 +1,10 @@
+.comnav {
+  height: 66px;
+  background: skyblue;
+  display: flex;
+  justify-content: center;
+}
+
+.comnav_img img {
+  height: 66px;
+}

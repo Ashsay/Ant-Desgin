@@ -18,6 +18,8 @@ import Register from './pages/form/register';
 import TableBasic from './pages/table';
 import Animation from './pages/animation';
 import Home from './pages/home';
+import Common from './common';
+import BaiduMap from './pages/map/baidumap';
 
 class Routes extends Component {
   render() {
@@ -25,6 +27,12 @@ class Routes extends Component {
       <HashRouter>
         <App>
           <Switch>
+            <Route path="/login" component={Login} />
+            <Route path='/common' render={()=>(
+              <Common>
+                <Route path='/common/testmap' component={BaiduMap} />
+              </Common>
+            )} />
             <Route path="/" render={()=>(
               <Admin>
                 <Switch>

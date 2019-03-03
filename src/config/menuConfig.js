@@ -70,6 +70,16 @@ const menuList = [
   {
     title:"动画",
     key:'/animation'
+  },
+  {
+    title:"测试",
+    key:"/common",
+    children:[
+      {
+        title:"百度地图测试",
+        key:'/common/testmap'
+      }
+    ]
   }
 ]
 

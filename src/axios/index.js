@@ -44,4 +44,28 @@ export default class Axios {
     })
   }
 
+  static download(params = {}){
+    return new Promise((resolve,reject) => {
+      axios.get(params.url,{
+        params:params,
+        responseType:"blob"
+      }).then(res=>{
+        const fileName = res.headers["content-disposition"]
+        .split(";")[1]
+        .split("=")[1]
+        .split('"');
+        let url = window.URL.createObjectURL(new Blob([res.data]));
+        let link = document.createElement('a');
+        link.style.display = "none";
+        link.setAttribute("download",fileName[1]);
+        document.body.appendChild(link);
+        link.click();
+        resolve();
+      }).catch(err=>{
+        console.log(err);
+        reject(err);
+      })
+    })
+  }
+
 }
