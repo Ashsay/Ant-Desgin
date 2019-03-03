@@ -17,6 +17,10 @@ class Demo extends Component {
       })
     },3000)
   }
+  
+  renderMap = () =>{
+  
+  }
 
   render() {
     const icon = <Icon type="loading" style={{fontSize:24}} />
@@ -26,6 +30,9 @@ class Demo extends Component {
           <Spin tip="loading" indicator={icon} spinning={this.state.isSpin}>
             <Alert message="Ant Desgin" description="This is a Alert components" />
           </Spin>
+        </Card>
+        <Card title="map">
+
         </Card>
       </div>
     );

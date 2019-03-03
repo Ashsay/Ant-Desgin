@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Avatar, Badge, Tooltip } from 'antd';
 import Util from './../../utils/utils';
 import axios from './../../axios';
-// import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -43,7 +42,14 @@ class Header extends Component {
       <div className="header">
         <Row className="header-top">
           <Col span={24}>
-            <span>欢迎，{this.state.userName}</span>
+            <span style={{marginRight:14}}>
+              <Badge count={3}>
+                <Avatar shape="square" icon="user" />
+              </Badge>
+            </span>
+            <Tooltip placement='bottom' title="Hello World">
+              <span>欢迎，{this.state.userName}</span>
+            </Tooltip>
             <a href="##">退出</a>
           </Col>
         </Row>
@@ -65,9 +71,5 @@ class Header extends Component {
     );
   }
 }
-
-// Header.propTypes = {
-
-// };
 
 export default Header;

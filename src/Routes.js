@@ -41,7 +41,7 @@ class Routes extends Component {
                   <Route path="/form/reg" component={Register} />
                   <Route path='/table' component={TableBasic} />
                   <Route path='/animation' component={Animation} />
-                  <Redirect to='/home' />
+                  <Route component={NoMatch} />
                 </Switch>
               </Admin>
             )} />
