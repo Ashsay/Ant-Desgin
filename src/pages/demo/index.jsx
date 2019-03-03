@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Card, Spin, Alert, Icon } from 'antd';
+import { Card, Spin, Alert, Icon, } from 'antd';
 
 class Demo extends Component {
 
   state = {
     isSpin:true
   }
-
   componentDidMount(){
     this.runSpin();
   }
@@ -27,9 +26,6 @@ class Demo extends Component {
           <Spin tip="loading" indicator={icon} spinning={this.state.isSpin}>
             <Alert message="Ant Desgin" description="This is a Alert components" />
           </Spin>
-        </Card>
-        <Card title="ChangePages">
-          
         </Card>
       </div>
     );

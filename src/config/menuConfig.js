@@ -1,71 +1,75 @@
 const menuList = [
   {
     title:"首页",
-    key:"/admin/home"
+    key:"/home"
   },
   {
     title:'UI',
-    key:"/admin/ui",
+    key:"/ui",
     children:[
       {
         title:"按钮",
-        key:"/admin/ui/buttons",
+        key:"/ui/buttons",
       },
       {
         title:"弹框",
-        key:"/admin/ui/modals",
+        key:"/ui/modals",
       },
       {
         title:"Loading",
-        key:"/admin/ui/loading"
+        key:"/ui/loading"
       },
       {
         title:"通知提醒",
-        key:"/admin/ui/notify"
+        key:"/ui/notify"
       },
       {
         title:"全局Message",
-        key:"/admin/ui/message"
+        key:"/ui/message"
       },
       {
         title:"Tab标签",
-        key:"/admin/ui/tabs"
+        key:"/ui/tabs"
       },
       {
         title:"图片画廊",
-        key:"/admin/ui/pic"
+        key:"/ui/pic"
       },
       {
         title:"轮播图",
-        key:"/admin/ui/swiper"
+        key:"/ui/swiper"
       }
     ]
   },
   {
     title:"表格",
-    key:"/admin/form",
+    key:"/form",
     children:[
       {
         title:"登录",
-        key:"/admin/form/login"
+        key:"/form/login"
       },
       {
         title:"注册",
-        key:"/admin/form/reg"
+        key:"/form/reg"
       }
     ]
   },
   {
     title:"副文本",
-    key:"/admin/text"
+    key:"/text"
   },
   {
     title:"表格",
-    key:"/admin/table"
+    key:"/table"
   },
   {
     title:"demo",
-    key:"/admin/demo"
+    key:"/demo"
+  },
+  {
+    title:"动画",
+    key:'/animation'
   }
 ]
 

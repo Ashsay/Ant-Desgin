@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {
-  Card, Form, Input, Icon, Radio, InputNumber, Select, Switch, DatePicker, Upload, Checkbox, Button,
+  Card, Form, Input, Icon, Radio, InputNumber, Select, Switch, DatePicker, Upload, Checkbox, Button, TimePicker,
 } from 'antd';
 const RadioGroup = Radio.Group;
 const FormItem = Form.Item;
 const Option = Select.Option;
+const TextArea = Input.TextArea;
 
 class Register extends Component {
 
@@ -58,6 +59,11 @@ class Register extends Component {
         }
       }
     }
+
+    const rowObject = {
+      minRow:4, maxRow: 6
+    }
+
     return (
       <div>
         <Card title="Register">
@@ -138,6 +144,24 @@ class Register extends Component {
                     showTime
                     format="YYYY-MM-DD HH:mm:ss"
                   /> 
+                )
+              }
+            </FormItem>
+            <FormItem label="详细地址"  {...formItemLayout}>
+              {
+                getFieldDecorator('address',{
+                  initialValue:'上海市环球港'
+                })(
+                  <TextArea autosize={rowObject} />
+                )
+              }
+            </FormItem>
+            <FormItem label="早期时间"  {...formItemLayout}>
+              {
+                getFieldDecorator('time',{
+
+                })(
+                  <TimePicker/> 
                 )
               }
             </FormItem>

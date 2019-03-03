@@ -5,10 +5,8 @@ import './index.css';
 
 import MenuConfig from './../../config/menuConfig';
 
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-
 
 class NavLeft extends Component {
 

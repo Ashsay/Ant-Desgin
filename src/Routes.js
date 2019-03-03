@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import App from './App';
-import { HashRouter , Route , Switch } from 'react-router-dom';
+import { HashRouter , Route , Switch, Redirect } from 'react-router-dom';
 
 import Demo from './pages/demo';
 import Admin from './admin';
@@ -15,6 +15,9 @@ import Notify from './pages/ui/notify';
 import Swiper from './pages/ui/swiper';
 import Login from './pages/form/login';
 import Register from './pages/form/register';
+import TableBasic from './pages/table';
+import Animation from './pages/animation';
+import Home from './pages/home';
 
 class Routes extends Component {
   render() {
@@ -22,19 +25,24 @@ class Routes extends Component {
       <HashRouter>
         <App>
           <Switch>
-            <Route path="/admin" render={()=>(
+            <Route path="/" render={()=>(
               <Admin>
-                <Route path="/admin/demo" component={Demo} />
-                <Route path="/admin/ui/buttons" component={ButtonPages} />
-                <Route path="/admin/ui/message" component={Message} />
-                <Route path="/admin/ui/tabs" component={Tab} />
-                <Route path="/admin/ui/modals" component={Modals} />
-                <Route path="/admin/ui/loading" component={Loading} />
-                <Route path="/admin/ui/notify" component={Notify} />
-                <Route path="/admin/ui/swiper" component={Swiper} />
-                <Route path="/admin/form/login" component={Login} />
-                <Route path="/admin/form/reg" component={Register} />
-                {/* <Route component={NoMatch} /> */}
+                <Switch>
+                  <Route path='/home' component={Home} />
+                  <Route path="/demo" component={Demo} />
+                  <Route path="/ui/buttons" component={ButtonPages} />
+                  <Route path="/ui/message" component={Message} />
+                  <Route path="/ui/tabs" component={Tab} />
+                  <Route path="/ui/modals" component={Modals} />
+                  <Route path="/ui/loading" component={Loading} />
+                  <Route path="/ui/notify" component={Notify} />
+                  <Route path="/ui/swiper" component={Swiper} />
+                  <Route path="/form/login" component={Login} />
+                  <Route path="/form/reg" component={Register} />
+                  <Route path='/table' component={TableBasic} />
+                  <Route path='/animation' component={Animation} />
+                  <Redirect to='/home' />
+                </Switch>
               </Admin>
             )} />
             <Route component={NoMatch} />
