@@ -1,0 +1,16 @@
+.wrapper {
+  height: calc(100vh);
+}
+
+.wrapper_left {
+  padding: 12px 10px;
+  box-sizing: border-box;
+  background: #fff;
+  height: calc(100vh);
+}
+
+.wrapper_right {
+  background: #e5e5e5;
+  height: calc(100vh);
+  overflow: auto;
+}

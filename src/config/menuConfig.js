@@ -78,6 +78,10 @@ const menuList = [
       {
         title:"百度地图测试",
         key:'/common/testmap'
+      },
+      {
+        title:"百度echarts",
+        key:'/common/testcharts'
       }
     ]
   }

@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { Card, Table, Spin } from 'antd';
+import { Card, Table, Spin, Modal, Button, message, } from 'antd';
 import axios from './../../axios';
+import Utils from './../../utils/utils'
 
 class TableBasic extends Component {
 
   state={
     dataSource2:[],
-    isSpinning:false
+    isSpinning:false,
+  }
+
+  params = {
+    page:1
   }
 
   componentDidMount(){
@@ -40,6 +45,11 @@ class TableBasic extends Component {
         time:'09:00'
       },
     ]
+
+    dataSource.map((item,index)=>{
+      item.key = index
+    })
+
     this.setState({
       dataSource
     })
@@ -47,6 +57,7 @@ class TableBasic extends Component {
   }
 
   request = () => {
+    let _this = this;
     this.setState({
       isSpinning:true
     })
@@ -54,16 +65,49 @@ class TableBasic extends Component {
       url:'/tablelist',
       data:{
         params:{
-          page:1
+          page:this.params.page
         }
       }
     }).then((res)=>{
-      console.log(res);
       if(res.code == 0){
         this.setState({
-          dataSource2:res.result,
-          isSpinning:false
+          dataSource2:res.result.list,
+          isSpinning:false,
+          selectedRowKeys:[],
+          selectKey:null,
+          pagination:Utils.pagination(res,(current)=>{
+            _this.params.page = current
+            this.request()
+          })
         })
+      }
+    })
+  }
+
+  onRowClick = (record,index) => {
+    let selectKey = [index];
+    Modal.info({
+      title:'message',
+      content:`${record.userName} and ${index}`
+    })
+    this.setState({
+      selectedRowKeys:selectKey,
+      selectItem:record
+    })
+  }
+
+  handleDel = () => {
+    let rows = this.state.selectedRows;
+    let ids = [];
+    rows.map((item) => {
+      ids.push(item.id)
+    })
+    Modal.confirm({
+      title:'提示删除',
+      content:`确定要删除${ids.join(',')}`,
+      onOk:()=>{
+        message.success('删除成功')
+        this.request()
       }
     })
   }
@@ -107,6 +151,24 @@ class TableBasic extends Component {
       dataIndex:'time'
     }]
 
+    const {selectedRowKeys} = this.state
+
+    const rowSelection = {
+      type:'radio',
+      selectedRowKeys,
+    }
+
+    const rowCheckSelection = {
+      type:'checkbox',
+      selectedRowKeys,
+      onChange:(selectedRowKeys,selectedRows)=>{
+        this.setState({
+          selectedRowKeys,
+          selectedRows
+        })
+      }
+    }
+
     return (
       <div>
         <Card title="basicTable">
@@ -124,6 +186,48 @@ class TableBasic extends Component {
             dataSource={this.state.dataSource2}
             bordered
             pagination={false}
+            />
+          </Spin>
+        </Card>
+        <Card title="SelectedTable">
+          <Spin spinning={this.state.isSpinning}>
+            <Table 
+            columns={columns}
+            dataSource={this.state.dataSource2}
+            bordered
+            pagination={false}
+            rowSelection = {rowSelection}
+            onRow = {(record,index)=>{
+              return {
+                onClick:()=>{
+                  this.onRowClick(record,index)
+                }
+              }
+            }}
+            />
+          </Spin>
+        </Card>
+        <Card title="checkBox">
+          <Spin spinning={this.state.isSpinning}>
+          <div>
+            <Button type="primary" onClick={this.handleDel}>Delete</Button>
+          </div>
+            <Table 
+            columns={columns}
+            dataSource={this.state.dataSource2}
+            bordered
+            pagination={false}
+            rowSelection = {rowCheckSelection}
+            />
+          </Spin>
+        </Card>
+        <Card title="pagination">
+          <Spin spinning={this.state.isSpinning}>
+            <Table 
+            columns={columns}
+            dataSource={this.state.dataSource2}
+            bordered
+            pagination={this.state.pagination}
             />
           </Spin>
         </Card>

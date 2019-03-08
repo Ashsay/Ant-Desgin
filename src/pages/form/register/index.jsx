@@ -81,7 +81,7 @@ class Register extends Component {
                 )
               }
             </FormItem>
-            <FormItem label="密码"  {...formItemLayout}>
+            <FormItem label="密码" {...formItemLayout}>
               {
                 getFieldDecorator('usrPwd',{
                   initialValue:'',

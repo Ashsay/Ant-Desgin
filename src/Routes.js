@@ -4,7 +4,6 @@ import { HashRouter , Route , Switch, Redirect } from 'react-router-dom';
 
 import Demo from './pages/demo';
 import Admin from './admin';
-// import Home from './pages/home';
 import ButtonPages from './pages/ui/button';
 import NoMatch from './pages/nomatch';
 import Message from './pages/ui/message';
@@ -20,6 +19,8 @@ import Animation from './pages/animation';
 import Home from './pages/home';
 import Common from './common';
 import BaiduMap from './pages/map/baidumap';
+import LoginPage from './pages/login';
+import Bar from './pages/echarts/bar';
 
 class Routes extends Component {
   render() {
@@ -27,10 +28,11 @@ class Routes extends Component {
       <HashRouter>
         <App>
           <Switch>
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={LoginPage} />
             <Route path='/common' render={()=>(
               <Common>
                 <Route path='/common/testmap' component={BaiduMap} />
+                <Route path='/common/testcharts' component={Bar} />
               </Common>
             )} />
             <Route path="/" render={()=>(
@@ -49,7 +51,7 @@ class Routes extends Component {
                   <Route path="/form/reg" component={Register} />
                   <Route path='/table' component={TableBasic} />
                   <Route path='/animation' component={Animation} />
-                  <Route component={NoMatch} />
+                  <Redirect to="/home" component={Home} />
                 </Switch>
               </Admin>
             )} />
