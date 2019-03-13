@@ -69,7 +69,7 @@ class TableBasic extends Component {
         }
       }
     }).then((res)=>{
-      if(res.code == 0){
+      if(res.code === 0){
         this.setState({
           dataSource2:res.result.list,
           isSpinning:false,
@@ -124,7 +124,7 @@ class TableBasic extends Component {
       title:'性别',
       dataIndex:'sex',
       render(sex){
-        return sex == 1 ? '男' : "女"
+        return sex === 1 ? '男' : "女"
       }
     },{
       title:'框架',
@@ -173,37 +173,37 @@ class TableBasic extends Component {
       <div>
         <Card title="basicTable">
           <Table 
-          columns={columns} 
-          dataSource={this.state.dataSource}
-          bordered
-          pagination={false}
+            columns={columns} 
+            dataSource={this.state.dataSource}
+            bordered
+            pagination={false}
           />
         </Card>
         <Card title="seniorTable">
           <Spin spinning={this.state.isSpinning}>
             <Table 
-            columns={columns}
-            dataSource={this.state.dataSource2}
-            bordered
-            pagination={false}
+              columns={columns}
+              dataSource={this.state.dataSource2}
+              bordered
+              pagination={false}
             />
           </Spin>
         </Card>
         <Card title="SelectedTable">
           <Spin spinning={this.state.isSpinning}>
             <Table 
-            columns={columns}
-            dataSource={this.state.dataSource2}
-            bordered
-            pagination={false}
-            rowSelection = {rowSelection}
-            onRow = {(record,index)=>{
-              return {
-                onClick:()=>{
-                  this.onRowClick(record,index)
+              columns={columns}
+              dataSource={this.state.dataSource2}
+              bordered
+              pagination={false}
+              rowSelection = {rowSelection}
+              onRow = {(record,index)=>{
+                return {
+                  onClick:()=>{
+                    this.onRowClick(record,index)
+                  }
                 }
-              }
-            }}
+              }}
             />
           </Spin>
         </Card>
@@ -213,21 +213,21 @@ class TableBasic extends Component {
             <Button type="primary" onClick={this.handleDel}>Delete</Button>
           </div>
             <Table 
-            columns={columns}
-            dataSource={this.state.dataSource2}
-            bordered
-            pagination={false}
-            rowSelection = {rowCheckSelection}
+              columns={columns}
+              dataSource={this.state.dataSource2}
+              bordered
+              pagination={false}
+              rowSelection = {rowCheckSelection}
             />
           </Spin>
         </Card>
         <Card title="pagination">
           <Spin spinning={this.state.isSpinning}>
             <Table 
-            columns={columns}
-            dataSource={this.state.dataSource2}
-            bordered
-            pagination={this.state.pagination}
+              columns={columns}
+              dataSource={this.state.dataSource2}
+              bordered
+              pagination={this.state.pagination}
             />
           </Spin>
         </Card>

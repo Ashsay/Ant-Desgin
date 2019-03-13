@@ -84,6 +84,10 @@ const menuList = [
         key:'/common/testcharts'
       }
     ]
+  },
+  {
+    title:"城市管理",
+    key:'/admin/city'
   }
 ]
 

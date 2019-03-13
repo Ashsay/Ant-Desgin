@@ -21,6 +21,7 @@ import Common from './common';
 import BaiduMap from './pages/map/baidumap';
 import LoginPage from './pages/login';
 import Bar from './pages/echarts/bar';
+import City from './pages/city';
 
 class Routes extends Component {
   render() {
@@ -51,6 +52,7 @@ class Routes extends Component {
                   <Route path="/form/reg" component={Register} />
                   <Route path='/table' component={TableBasic} />
                   <Route path='/animation' component={Animation} />
+                  <Route path="/admin/city" component={City} />
                   <Redirect to="/home" component={Home} />
                 </Switch>
               </Admin>
