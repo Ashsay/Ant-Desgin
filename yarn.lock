@@ -9052,6 +9052,17 @@ rc-tween-one@^2.3.2:
     style-utils "~0.2.0"
     tween-functions "~1.2.0"
 
+rc-tween-one@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-2.3.4.tgz#cec87e605b5dfb330e84511f55b5fdff73b2d4f8"
+  integrity sha512-UGb0Vb+TENbt23JKj38ofIabavDQweF4b6HbphaixYWTkZ8Mdz+Eu4aWOEjIKfL2dFTsRjRWUaEIWuhe1zSmcQ==
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.6.1"
+    raf "~3.4.0"
+    style-utils "~0.2.0"
+    tween-functions "~1.2.0"
+
 rc-upload@~2.6.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/rc-upload/-/rc-upload-2.6.2.tgz#4858096d5dc24982594ec725003763176e754279"

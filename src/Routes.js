@@ -22,6 +22,7 @@ import BaiduMap from './pages/map/baidumap';
 import LoginPage from './pages/login';
 import Bar from './pages/echarts/bar';
 import City from './pages/city';
+import Order from './pages/order';
 
 class Routes extends Component {
   render() {
@@ -53,6 +54,7 @@ class Routes extends Component {
                   <Route path='/table' component={TableBasic} />
                   <Route path='/animation' component={Animation} />
                   <Route path="/admin/city" component={City} />
+                  <Route path='/admin/order' component={Order} />
                   <Redirect to="/home" component={Home} />
                 </Switch>
               </Admin>

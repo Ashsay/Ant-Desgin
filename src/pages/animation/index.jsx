@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Alert } from 'antd';
+import { Card, Alert, } from 'antd';
 import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
 import './index.css';
 
 class Animation extends Component {
@@ -14,8 +15,10 @@ class Animation extends Component {
             </Card>
           </div>
           <div key='2' className="cardView">
-            <Card title="ant Motion 2">
-              
+            <Card title="Swiper">
+              <TweenOne animation={{ y:30, opacity:0, type:'from' }}>
+                Ant Motion 1
+              </TweenOne>
             </Card>
           </div>
           <div key='3' className="cardView">
