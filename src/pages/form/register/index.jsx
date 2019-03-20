@@ -9,7 +9,9 @@ const TextArea = Input.TextArea;
 
 class Register extends Component {
 
-  state = {};
+  state = {
+    loading:Boolean
+  };
 
   handleSubmit = () => {
     this.props.form.validateFields((err,val)=>{

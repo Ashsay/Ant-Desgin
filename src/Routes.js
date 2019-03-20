@@ -23,6 +23,7 @@ import LoginPage from './pages/login';
 import Bar from './pages/echarts/bar';
 import City from './pages/city';
 import Order from './pages/order';
+import ReduxSaga from './pages/todolist/redux-saga';
 
 class Routes extends Component {
   render() {
@@ -55,6 +56,7 @@ class Routes extends Component {
                   <Route path='/animation' component={Animation} />
                   <Route path="/admin/city" component={City} />
                   <Route path='/admin/order' component={Order} />
+                  <Route path='/todolist/redux-saga' component={ReduxSaga} />
                   <Redirect to="/home" component={Home} />
                 </Switch>
               </Admin>

@@ -62,6 +62,7 @@ class Demo extends Component {
             columns={columns}
             dataSource={this.state.dataSource}
             bordered
+            rowKey={record => record.id}
           />
         </Card>
       </div>

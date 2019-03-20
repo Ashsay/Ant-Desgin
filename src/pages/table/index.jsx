@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Table, Spin, Modal, Button, message, } from 'antd';
 import axios from './../../axios';
 import Utils from './../../utils/utils'
+import dataSource from './data/dataSource';
 
 class TableBasic extends Component {
 
@@ -15,44 +16,15 @@ class TableBasic extends Component {
   }
 
   componentDidMount(){
-    const dataSource = [
-      {
-        id:'0',
-        userName:'Alex',
-        sex:'1',
-        state:'1',
-        interest:'1',
-        birthday:'1997-01-01',
-        address:"上海环球港",
-        time:'09:00'
-      },{
-        id:'1',
-        userName:'Alex',
-        sex:'1',
-        state:'1',
-        interest:'1',
-        birthday:'1997-01-01',
-        address:"上海环球港",
-        time:'09:00'
-      },{
-        id:'2',
-        userName:'Alex',
-        sex:'1',
-        state:'1',
-        interest:'1',
-        birthday:'1997-01-01',
-        address:"上海环球港",
-        time:'09:00'
-      },
-    ]
+
+    this.setState({
+      dataSource,
+    })
 
     dataSource.map((item,index)=>{
       item.key = index
     })
-
-    this.setState({
-      dataSource
-    })
+    
     this.request();
   }
 
@@ -177,6 +149,7 @@ class TableBasic extends Component {
             dataSource={this.state.dataSource}
             bordered
             pagination={false}
+            rowKey={record => record.id}
           />
         </Card>
         <Card title="seniorTable">
@@ -186,6 +159,7 @@ class TableBasic extends Component {
               dataSource={this.state.dataSource2}
               bordered
               pagination={false}
+              rowKey={record => record.id}
             />
           </Spin>
         </Card>
@@ -204,6 +178,7 @@ class TableBasic extends Component {
                   }
                 }
               }}
+              rowKey={record => record.id}
             />
           </Spin>
         </Card>
@@ -218,6 +193,7 @@ class TableBasic extends Component {
               bordered
               pagination={false}
               rowSelection = {rowCheckSelection}
+              rowKey={record => record.id}
             />
           </Spin>
         </Card>
@@ -228,6 +204,7 @@ class TableBasic extends Component {
               dataSource={this.state.dataSource2}
               bordered
               pagination={this.state.pagination}
+              rowKey={record => record.id}
             />
           </Spin>
         </Card>
