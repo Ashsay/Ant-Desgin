@@ -4,7 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Routes from './Routes';
 
-import store from './store';
+import store from './saga/index';
 import { Provider } from 'react-redux';
 
 ReactDOM.render(

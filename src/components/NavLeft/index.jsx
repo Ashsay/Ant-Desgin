@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import './index.css';
 
 import MenuConfig from './../../config/menuConfig';
@@ -49,9 +48,5 @@ class NavLeft extends Component {
     );
   }
 }
-
-// NavLeft.propTypes = {
-
-// };
 
 export default NavLeft;
