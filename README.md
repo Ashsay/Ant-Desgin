@@ -42,4 +42,34 @@ notification[type]({
   description:String
 })
 
-6.Tabs TabPane
+6.Tabs 
+  defaultActiveKey  onChange  type
+TabPane
+  tab  key  disabled  activeKey  onChange  onEdit
+
+7.Form
+  layout
+Form.Item
+  label  formItemLayout
+
+const {getFieldDecorator} = this.props.form
+
+this.props.form.validateFields
+
+this.props.form.getFieldsValue
+
+this.props.filterSubmit(fieldsValue)
+
+{
+  getFieldDecorator('name',{
+    initialValue:'',
+    rules:[{
+      required:true,
+      message:''
+    }]
+  })(
+    
+  )
+}
+
+export default Form.create()(Register);
