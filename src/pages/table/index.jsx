@@ -22,7 +22,7 @@ class TableBasic extends Component {
     })
 
     dataSource.map((item,index)=>{
-      item.key = index
+      return item.key = index;
     })
     
     this.request();
@@ -72,7 +72,7 @@ class TableBasic extends Component {
     let rows = this.state.selectedRows;
     let ids = [];
     rows.map((item) => {
-      ids.push(item.id)
+      return ids.push(item.id)
     })
     Modal.confirm({
       title:'提示删除',

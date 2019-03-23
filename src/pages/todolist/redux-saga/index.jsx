@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, Button } from 'antd';
 
-import { increment, incrementAsync } from './../../../saga/actions/count';
+import { increment, incrementAsync } from './../../../model/actions/count';
 
 class ReduxSaga extends Component {
   
@@ -27,4 +27,6 @@ const mapStateToProps=(state,props)=>{
   }
 }
 
-export default connect(mapStateToProps,{increment, incrementAsync})(ReduxSaga)
+export default connect(mapStateToProps,{
+  increment, incrementAsync,
+})(ReduxSaga)

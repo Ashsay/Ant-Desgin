@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Card, Button, Table, } from 'antd';
 import BaseForm from '../../components/BaseForm';
+import axios from './../../axios';
+import utils from './../../utils/utils';
 
 class Order extends Component {
 
-  state = {
+  state = {}
 
+  params = {
+    page:1
   }
 
   formList = [
@@ -37,7 +41,26 @@ class Order extends Component {
   }
 
   requestList = () => {
-    
+    let _this = this;
+    axios.ajax({
+      url:'/order/list',
+      data:{
+        params:{
+          page:this.params.page
+        }
+      }
+    }).then(response=>{
+      this.setState({
+        list:response.result.item_list.map((item,index)=>{
+          item.key = index;
+          return item;
+        }),
+        pagination:utils.pagination(response,(current)=>{
+          _this.params.page = current;
+          _this.requestList()
+        }),
+      })
+    })
   }
 
   render() {
@@ -71,7 +94,14 @@ class Order extends Component {
       },
       {
         title: '状态',
-        dataIndex: 'status'
+        dataIndex: 'status',
+        render(state){
+          let config = {
+            "1":"进行中",
+            "2":"结束进程"
+          }
+          return config[state];
+        }
       },
       {
         title: '开始时间',
@@ -102,7 +132,9 @@ class Order extends Component {
         <div>
           <Table
             bordered
-            columns = {columns}
+            columns={columns}
+            dataSource={this.state.list}
+            pagination={this.state.pagination}
           />
         </div>
       </div>

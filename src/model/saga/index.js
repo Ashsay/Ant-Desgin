@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { put, takeEvery, } from 'redux-saga/effects'
 import { INCREMENT_ASYNC } from '../constant/count';
 
 const delay = (ms) => new Promise(resolve=>setTimeout(resolve,ms))

@@ -27,9 +27,9 @@ export default class Axios {
         timeout:5000,
         params:(options.data && options.data.params) || '',
       }).then((response)=>{
-        if(response.status == '200'){
+        if(response.status === 200){
           let res = response.data;
-          if(res.code == '0'){
+          if(res.code === 0){
             resolve(res)
           }else{
             Modal.info({
@@ -54,7 +54,7 @@ export default class Axios {
         .split(";")[1]
         .split("=")[1]
         .split('"');
-        let url = window.URL.createObjectURL(new Blob([res.data]));
+        // let url = window.URL.createObjectURL(new Blob([res.data]));
         let link = document.createElement('a');
         link.style.display = "none";
         link.setAttribute("download",fileName[1]);

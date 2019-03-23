@@ -6,8 +6,12 @@ const FormItem = Form.Item;
 class BaseForm extends Component {
 
   handleFilterSubmit = () => {
-    let fieldsValue = this.props.form.getFieldsValue;
+    let fieldsValue = this.props.form.getFieldsValue();
     this.props.filterSubmit(fieldsValue);
+  }
+
+  reset = ()=>{
+    this.props.form.resetFields();
   }
 
   initFormList = () => {
@@ -90,7 +94,7 @@ class BaseForm extends Component {
         { this.initFormList() }
         <FormItem>
           <Button type='primary' style={{margin:'0 20px'}} onClick={this.handleFilterSubmit}>查询</Button>
-          <Button>重置</Button>
+          <Button type='primary' onClick={this.reset}>重置</Button>
         </FormItem>
       </Form>
     );
